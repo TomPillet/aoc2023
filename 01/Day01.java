@@ -16,15 +16,15 @@ class Day01 {
     while((line = file.readLine()) != null) {
       Matcher oneIntMatcher = oneIntPattern.matcher(line);
       Matcher twoIntsMatcher = twoIntsPattern.matcher(line);
-      System.out.println("-----------------------------");
-      System.out.println(line);
+      // System.out.println("-----------------------------");
+      // System.out.println(line);
       
       if (twoIntsMatcher.matches()) {
         result += Integer.parseInt(twoIntsMatcher.group(1) + twoIntsMatcher.group(2));
-        System.out.println(twoIntsMatcher.group(1) + twoIntsMatcher.group(2));
+        // System.out.println(twoIntsMatcher.group(1) + twoIntsMatcher.group(2));
       } else if (oneIntMatcher.find()) {
         result += Integer.parseInt(oneIntMatcher.group()+oneIntMatcher.group());
-        System.out.println(oneIntMatcher.group()+oneIntMatcher.group());
+        // System.out.println(oneIntMatcher.group()+oneIntMatcher.group());
       }
     }
 
