@@ -29,5 +29,6 @@ class Day01 {
     }
 
     System.out.println("Result : "+result);
+    file.close();
   }
 }
