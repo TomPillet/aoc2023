@@ -6,10 +6,14 @@ import java.util.regex.Pattern;
 
 class Day01 {
   public static void main(String[] args) throws IOException {
+    System.out.println("Result : " + firstPart());
+  }
+
+  public static Integer firstPart() throws IOException  {
     BufferedReader file = new BufferedReader(new FileReader("input.txt"));
     
     Pattern oneIntPattern = Pattern.compile("·*\\d");
-    Pattern twoIntsPattern = Pattern.compile("^\\D*(\\d).*(\\d)\\D*$");
+    Pattern twoIntsPattern = Pattern.compile("^\\D*(\\d|one|two|three|four|five|six|seven|eight|nine).*(\\d)\\D*$");
     Integer result = 0;
     String line;
 
@@ -28,7 +32,10 @@ class Day01 {
       }
     }
 
-    System.out.println("Result : "+result);
     file.close();
+    return result;
   }
+
+  // Regex for second part :
+  // ^.(one|two|three|four|five|six|seven|eight|nine|\d).*(\d)\D*$
 }
