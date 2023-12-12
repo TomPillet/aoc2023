@@ -30,9 +30,7 @@ public class PartOne {
     }
     
     private static boolean isGameValid(String game) {
-        game = game.replaceAll("Game(\\d+):","");
-        String[] sets = game.split(";");
-        
+        String[] sets = game.replaceAll("Game(\\d+):","").split(";");        
         for (int i=0; i<sets.length; i++) {
             String currentSet = sets[i];
             int blueCubes = extractNumberOfCubesByColor(currentSet, blueNumberPattern);
